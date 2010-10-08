@@ -1,0 +1,17 @@
+<!--{if $javascriptLibraryIncludes |@count gt 0}-->
+<!--{foreach from = $javascriptLibraryIncludes item = javascriptLibraryInclude }-->
+	<script type = "text/javascript" language = "javascript"  src ="<!--{$javascriptLibraryPath}--><!--{$javascriptLibraryInclude}-->"   ></script>
+<!--{/foreach}-->
+<!--{/if}-->
+<!--{if $javaScriptActionInfo}-->
+<script  type = "text/javascript" language = "javascript"> var $_LITEFRAME_ = <!--{$javaScriptActionInfo}-->;</script>
+<!--{/if}-->
+<script type = "text/javascript" language = "javascript" src = "LiteFramePHP/javascript/liteframe.js" ></script>
+<!--{if $javascriptInline}-->
+	<script type = "text/javascript" language = "javascript" ><!--{$javascriptInline}--></script>
+<!--{/if}-->
+<!--{if $javascriptIncludes |@count gt 0}-->
+<!--{foreach from = $javascriptIncludes item = javascriptInclude }-->
+	<script type = "text/javascript" language = "javascript"  src ="<!--{$javascriptPath}--><!--{$javascriptInclude}-->"   ></script>
+<!--{/foreach}-->
+<!--{/if}-->

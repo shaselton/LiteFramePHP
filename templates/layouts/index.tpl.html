@@ -1,0 +1,40 @@
+<html>
+    <head>
+    	<!--{ assign var = 'action'       		   value = `$_YOTTA_.ACTION` }-->
+        <!--{ assign var = 'includeTemplate'       value = `$_YOTTA_.VARS.fileSystemPaths.templateIncludePath` }-->
+        <!--{ assign var = 'actionTemplate'        value = `$_YOTTA_.VARS.fileSystemPaths.templateActionPath` }-->
+        <!--{ assign var = 'layoutTemplate'        value = `$_YOTTA_.VARS.fileSystemPaths.templateActionPath` }-->
+        <!--{ assign var = 'settingsTemplate'      value = `$_YOTTA_.VARS.fileSystemPaths.settingsPath` }-->
+        
+        <!--{ assign var = 'javaScriptActionInfo'  value = `$_YOTTA_.VARS.javaScriptActionInfo` }-->
+        <!--{ assign var = 'javascriptBottomPage'  value = `$_YOTTA_.VARS.javascriptBottomPage` }-->
+        <!--{ assign var = 'javascriptPath'        value = `$_YOTTA_.VARS.javascriptPath` }-->
+        <!--{ assign var = 'javascriptLibraryPath' value = `$_YOTTA_.VARS.javascriptLibraryPath` }-->
+        <!--{ assign var = 'javascriptLibraryIncludes' value = `$_YOTTA_.VARS.javascriptLibraryIncludes` }-->
+        <!--{ assign var = 'javascriptIncludes'    value = `$_YOTTA_.VARS.javascriptIncludes` }-->
+        <!--{ assign var = 'javascriptInline'      value = `$_YOTTA_.VARS.javascriptInline` }-->
+        
+        <!--{ assign var = 'stylePath'             value = `$_YOTTA_.VARS.stylePath` }-->
+        <!--{ assign var = 'imagePath'             value = `$_YOTTA_.VARS.imagePath` }-->
+        <!--{ assign var = 'styleIncludes'         value = `$_YOTTA_.VARS.styleIncludes` }-->
+        <!--{ assign var = 'styleInline'           value = `$_YOTTA_.VARS.styleInline` }-->
+        <!--{ assign var = 'styleLibraryIncludes' value = `$_YOTTA_.VARS.styleLibraryIncludes` }-->
+        <!--{ assign var = 'styleLibraryPath'         value = `$_YOTTA_.VARS.styleLibraryPath` }-->
+        
+        <!--{ assign var = 'applicationPath'       value = `$_YOTTA_.VARS.applicationPath` }-->
+
+		<!--{include file = $settingsTemplate|cat:"StyleIncludes.tpl.html"}-->
+        
+        <!--{if $javascriptBottomPage eq false}-->
+        <!--{include file = $settingsTemplate|cat:"JavaScriptActionInfo.tpl.html"}-->
+        <!--{/if}-->   
+    </head>
+    <body>
+    	<div id="yotta-wrapper">
+    	 <!--{include file = $_YOTTA_.VARS.actionTrigger }-->
+    	</div> <!-- /yotta wrapper  -->
+		<!--{if $javascriptBottomPage eq true}-->
+		<!--{include file = $settingsTemplate|cat:"JavaScriptActionInfo.tpl.html"}-->
+		<!--{/if}-->
+	</body>
+</html>
